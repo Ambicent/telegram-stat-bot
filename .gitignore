@@ -1,0 +1,7 @@
+# игнорировать всё
+*
+
+# кроме этих файлов
+!.gitignore
+!requirements.txt
+!stat_bot.py
