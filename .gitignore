@@ -5,6 +5,7 @@
 !.gitignore
 !requirements.txt
 !stat_bot.py
+!README.md
 
 # но игнорировать секреты
 .env
