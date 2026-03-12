@@ -4,11 +4,15 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import pdfplumber
 import io
+from dotenv import load_dotenv
 
-BOT_TOKEN = os.getenv("8306530068:AAF2qBr9S4Xbey7v_902AAfpIzkP6x9VJgw")
+load_dotenv()
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 if not BOT_TOKEN:
-    raise ValueError("Не задан BOT_TOKEN")
-async def start(update: Update):
+    raise ValueError("BOT_TOKEN не найден")
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Привет! Отправь мне PDF файл с отчетом Markets Forecast, и я подсчитаю статистику по комнатам."
     )
